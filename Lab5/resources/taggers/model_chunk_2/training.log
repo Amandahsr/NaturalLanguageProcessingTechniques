@@ -1,0 +1,253 @@
+2025-10-23 08:26:58,596 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:26:58,600 Model: "SequenceTagger(
+  (embeddings): StackedEmbeddings(
+    (list_embedding_0): WordEmbeddings(
+      'glove'
+      (embedding): Embedding(400001, 100)
+    )
+    (list_embedding_1): FlairEmbeddings(
+      (lm): LanguageModel(
+        (drop): Dropout(p=0.05, inplace=False)
+        (encoder): Embedding(300, 100)
+        (rnn): LSTM(100, 2048)
+      )
+    )
+    (list_embedding_2): FlairEmbeddings(
+      (lm): LanguageModel(
+        (drop): Dropout(p=0.05, inplace=False)
+        (encoder): Embedding(300, 100)
+        (rnn): LSTM(100, 2048)
+      )
+    )
+  )
+  (word_dropout): WordDropout(p=0.05)
+  (locked_dropout): LockedDropout(p=0.5)
+  (embedding2nn): Linear(in_features=4196, out_features=4196, bias=True)
+  (rnn): LSTM(4196, 256, batch_first=True, bidirectional=True)
+  (linear): Linear(in_features=512, out_features=19, bias=True)
+  (loss_function): ViterbiLoss()
+  (crf): CRF()
+)"
+2025-10-23 08:26:58,603 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:26:58,606 Corpus: 5515 train + 3466 dev + 3684 test sentences
+2025-10-23 08:26:58,607 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:26:58,609 Train:  5515 sentences
+2025-10-23 08:26:58,609         (train_with_dev=False, train_with_test=False)
+2025-10-23 08:26:58,611 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:26:58,612 Training Params:
+2025-10-23 08:26:58,613  - learning_rate: "0.1" 
+2025-10-23 08:26:58,614  - mini_batch_size: "32"
+2025-10-23 08:26:58,615  - max_epochs: "10"
+2025-10-23 08:26:58,616  - shuffle: "True"
+2025-10-23 08:26:58,617 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:26:58,618 Plugins:
+2025-10-23 08:26:58,619  - AnnealOnPlateau | patience: '3', anneal_factor: '0.5', min_learning_rate: '0.0001'
+2025-10-23 08:26:58,620 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:26:58,620 Final evaluation on model from best epoch (best-model.pt)
+2025-10-23 08:26:58,622  - metric: "('micro avg', 'f1-score')"
+2025-10-23 08:26:58,623 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:26:58,624 Computation:
+2025-10-23 08:26:58,625  - compute on device: cuda:0
+2025-10-23 08:26:58,625  - embedding storage: cpu
+2025-10-23 08:26:58,626 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:26:58,627 Model training base path: "resources/taggers/model_chunk_2"
+2025-10-23 08:26:58,628 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:26:58,629 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:27:04,930 epoch 1 - iter 17/173 - loss 1.12065061 - time (sec): 6.30 - samples/sec: 1143.32 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:27:11,575 epoch 1 - iter 34/173 - loss 0.85966718 - time (sec): 12.94 - samples/sec: 1087.51 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:27:17,734 epoch 1 - iter 51/173 - loss 0.72667109 - time (sec): 19.10 - samples/sec: 1077.96 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:27:24,468 epoch 1 - iter 68/173 - loss 0.63303411 - time (sec): 25.84 - samples/sec: 1056.78 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:27:30,831 epoch 1 - iter 85/173 - loss 0.56305414 - time (sec): 32.20 - samples/sec: 1067.49 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:27:37,723 epoch 1 - iter 102/173 - loss 0.51459931 - time (sec): 39.09 - samples/sec: 1055.01 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:27:44,555 epoch 1 - iter 119/173 - loss 0.46995729 - time (sec): 45.92 - samples/sec: 1055.36 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:27:51,334 epoch 1 - iter 136/173 - loss 0.43739000 - time (sec): 52.70 - samples/sec: 1051.80 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:27:57,727 epoch 1 - iter 153/173 - loss 0.41282898 - time (sec): 59.09 - samples/sec: 1053.90 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:28:03,988 epoch 1 - iter 170/173 - loss 0.39316632 - time (sec): 65.36 - samples/sec: 1047.94 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:28:05,150 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:28:05,151 EPOCH 1 done: loss 0.3903 - lr: 0.100000
+2025-10-23 08:28:05,152 Saving model at current epoch since 'save_model_each_k_epochs=1' was set
+2025-10-23 08:29:12,712 DEV : loss 0.12515711784362793 - f1-score (micro avg)  0.831
+2025-10-23 08:29:48,284 TEST : loss 0.15403982996940613 - f1-score (micro avg)  0.8001
+2025-10-23 08:29:48,479  - 0 epochs without improvement
+2025-10-23 08:29:48,488 saving best model
+2025-10-23 08:30:18,443 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:30:21,711 epoch 2 - iter 17/173 - loss 0.18330273 - time (sec): 3.26 - samples/sec: 2082.84 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:30:24,357 epoch 2 - iter 34/173 - loss 0.16603569 - time (sec): 5.91 - samples/sec: 2338.85 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:30:26,381 epoch 2 - iter 51/173 - loss 0.16489153 - time (sec): 7.93 - samples/sec: 2649.74 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:30:29,251 epoch 2 - iter 68/173 - loss 0.15847291 - time (sec): 10.80 - samples/sec: 2607.80 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:30:31,786 epoch 2 - iter 85/173 - loss 0.15441484 - time (sec): 13.34 - samples/sec: 2640.36 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:30:33,637 epoch 2 - iter 102/173 - loss 0.15640634 - time (sec): 15.19 - samples/sec: 2748.68 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:30:35,913 epoch 2 - iter 119/173 - loss 0.15363372 - time (sec): 17.47 - samples/sec: 2745.19 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:30:38,219 epoch 2 - iter 136/173 - loss 0.15021803 - time (sec): 19.77 - samples/sec: 2768.79 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:30:40,174 epoch 2 - iter 153/173 - loss 0.14791807 - time (sec): 21.73 - samples/sec: 2846.62 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:30:42,050 epoch 2 - iter 170/173 - loss 0.14778872 - time (sec): 23.60 - samples/sec: 2899.02 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:30:42,375 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:30:42,377 EPOCH 2 done: loss 0.1477 - lr: 0.100000
+2025-10-23 08:30:42,378 Saving model at current epoch since 'save_model_each_k_epochs=1' was set
+2025-10-23 08:31:29,078 DEV : loss 0.08223306387662888 - f1-score (micro avg)  0.8697
+2025-10-23 08:31:47,482 TEST : loss 0.10769349336624146 - f1-score (micro avg)  0.8421
+2025-10-23 08:31:47,685  - 0 epochs without improvement
+2025-10-23 08:31:47,694 saving best model
+2025-10-23 08:32:20,015 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:32:22,069 epoch 3 - iter 17/173 - loss 0.13332417 - time (sec): 2.05 - samples/sec: 3251.48 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:32:24,273 epoch 3 - iter 34/173 - loss 0.11864155 - time (sec): 4.25 - samples/sec: 3186.07 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:32:26,451 epoch 3 - iter 51/173 - loss 0.11680395 - time (sec): 6.43 - samples/sec: 3188.49 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:32:28,240 epoch 3 - iter 68/173 - loss 0.11401616 - time (sec): 8.22 - samples/sec: 3292.33 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:32:31,307 epoch 3 - iter 85/173 - loss 0.11560905 - time (sec): 11.29 - samples/sec: 3012.65 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:32:33,350 epoch 3 - iter 102/173 - loss 0.11517001 - time (sec): 13.33 - samples/sec: 3049.00 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:32:35,519 epoch 3 - iter 119/173 - loss 0.11352504 - time (sec): 15.50 - samples/sec: 3094.27 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:32:37,492 epoch 3 - iter 136/173 - loss 0.11325089 - time (sec): 17.47 - samples/sec: 3139.06 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:32:39,651 epoch 3 - iter 153/173 - loss 0.11110329 - time (sec): 19.63 - samples/sec: 3160.96 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:32:41,638 epoch 3 - iter 170/173 - loss 0.10943846 - time (sec): 21.62 - samples/sec: 3171.75 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:32:41,967 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:32:41,969 EPOCH 3 done: loss 0.1089 - lr: 0.100000
+2025-10-23 08:32:41,971 Saving model at current epoch since 'save_model_each_k_epochs=1' was set
+2025-10-23 08:33:36,576 DEV : loss 0.0761890560388565 - f1-score (micro avg)  0.8912
+2025-10-23 08:33:55,588 TEST : loss 0.08865460753440857 - f1-score (micro avg)  0.8683
+2025-10-23 08:33:55,792  - 0 epochs without improvement
+2025-10-23 08:33:55,802 saving best model
+2025-10-23 08:34:15,793 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:34:18,438 epoch 4 - iter 17/173 - loss 0.09937466 - time (sec): 2.63 - samples/sec: 2628.97 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:34:20,591 epoch 4 - iter 34/173 - loss 0.09122634 - time (sec): 4.78 - samples/sec: 2866.54 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:34:22,774 epoch 4 - iter 51/173 - loss 0.09320977 - time (sec): 6.97 - samples/sec: 2952.42 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:34:25,019 epoch 4 - iter 68/173 - loss 0.09578121 - time (sec): 9.21 - samples/sec: 3022.91 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:34:27,922 epoch 4 - iter 85/173 - loss 0.09396510 - time (sec): 12.12 - samples/sec: 2863.22 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:34:30,415 epoch 4 - iter 102/173 - loss 0.09268059 - time (sec): 14.61 - samples/sec: 2829.66 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:34:32,640 epoch 4 - iter 119/173 - loss 0.09076363 - time (sec): 16.83 - samples/sec: 2867.11 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:34:34,775 epoch 4 - iter 136/173 - loss 0.08970263 - time (sec): 18.97 - samples/sec: 2909.25 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:34:36,725 epoch 4 - iter 153/173 - loss 0.09010890 - time (sec): 20.92 - samples/sec: 2952.38 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:34:38,958 epoch 4 - iter 170/173 - loss 0.09057583 - time (sec): 23.15 - samples/sec: 2950.79 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:34:39,330 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:34:39,331 EPOCH 4 done: loss 0.0912 - lr: 0.100000
+2025-10-23 08:34:39,332 Saving model at current epoch since 'save_model_each_k_epochs=1' was set
+2025-10-23 08:35:36,146 DEV : loss 0.0675242468714714 - f1-score (micro avg)  0.8977
+2025-10-23 08:35:59,419 TEST : loss 0.09596322476863861 - f1-score (micro avg)  0.8754
+2025-10-23 08:35:59,622  - 0 epochs without improvement
+2025-10-23 08:35:59,632 saving best model
+2025-10-23 08:36:43,899 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:36:47,328 epoch 5 - iter 17/173 - loss 0.07595188 - time (sec): 3.40 - samples/sec: 2030.32 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:36:50,005 epoch 5 - iter 34/173 - loss 0.07255925 - time (sec): 6.08 - samples/sec: 2254.78 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:36:52,209 epoch 5 - iter 51/173 - loss 0.07655497 - time (sec): 8.28 - samples/sec: 2428.33 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:36:54,329 epoch 5 - iter 68/173 - loss 0.07703398 - time (sec): 10.40 - samples/sec: 2571.08 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:36:57,905 epoch 5 - iter 85/173 - loss 0.07742842 - time (sec): 13.98 - samples/sec: 2398.15 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:37:01,803 epoch 5 - iter 102/173 - loss 0.08019983 - time (sec): 17.88 - samples/sec: 2279.51 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:37:03,693 epoch 5 - iter 119/173 - loss 0.08156863 - time (sec): 19.77 - samples/sec: 2414.08 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:37:05,922 epoch 5 - iter 136/173 - loss 0.07979450 - time (sec): 22.00 - samples/sec: 2474.23 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:37:08,484 epoch 5 - iter 153/173 - loss 0.08017500 - time (sec): 24.56 - samples/sec: 2486.19 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:37:11,660 epoch 5 - iter 170/173 - loss 0.07909390 - time (sec): 27.73 - samples/sec: 2468.40 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:37:12,073 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:37:12,078 EPOCH 5 done: loss 0.0794 - lr: 0.100000
+2025-10-23 08:37:12,079 Saving model at current epoch since 'save_model_each_k_epochs=1' was set
+2025-10-23 08:38:19,048 DEV : loss 0.05561232566833496 - f1-score (micro avg)  0.9158
+2025-10-23 08:38:44,020 TEST : loss 0.08021065592765808 - f1-score (micro avg)  0.8887
+2025-10-23 08:38:44,241  - 0 epochs without improvement
+2025-10-23 08:38:44,249 saving best model
+2025-10-23 08:39:32,931 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:39:35,524 epoch 6 - iter 17/173 - loss 0.07501793 - time (sec): 2.58 - samples/sec: 2631.38 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:39:38,185 epoch 6 - iter 34/173 - loss 0.06689653 - time (sec): 5.24 - samples/sec: 2590.22 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:39:40,815 epoch 6 - iter 51/173 - loss 0.07074128 - time (sec): 7.87 - samples/sec: 2638.84 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:39:43,434 epoch 6 - iter 68/173 - loss 0.06842339 - time (sec): 10.49 - samples/sec: 2634.88 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:39:46,086 epoch 6 - iter 85/173 - loss 0.06880758 - time (sec): 13.14 - samples/sec: 2635.88 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:39:48,400 epoch 6 - iter 102/173 - loss 0.06819140 - time (sec): 15.46 - samples/sec: 2686.01 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:39:50,867 epoch 6 - iter 119/173 - loss 0.07107033 - time (sec): 17.93 - samples/sec: 2676.04 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:39:53,622 epoch 6 - iter 136/173 - loss 0.07098943 - time (sec): 20.68 - samples/sec: 2670.50 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:39:56,104 epoch 6 - iter 153/173 - loss 0.07036490 - time (sec): 23.16 - samples/sec: 2669.67 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:39:59,324 epoch 6 - iter 170/173 - loss 0.06974759 - time (sec): 26.38 - samples/sec: 2597.54 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:39:59,938 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:39:59,941 EPOCH 6 done: loss 0.0694 - lr: 0.100000
+2025-10-23 08:39:59,943 Saving model at current epoch since 'save_model_each_k_epochs=1' was set
+2025-10-23 08:41:00,510 DEV : loss 0.05833384022116661 - f1-score (micro avg)  0.9147
+2025-10-23 08:41:26,515 TEST : loss 0.0779208093881607 - f1-score (micro avg)  0.8878
+2025-10-23 08:41:26,719  - 1 epochs without improvement
+2025-10-23 08:41:26,726 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:41:29,143 epoch 7 - iter 17/173 - loss 0.06219821 - time (sec): 2.42 - samples/sec: 2839.80 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:41:31,646 epoch 7 - iter 34/173 - loss 0.06692751 - time (sec): 4.92 - samples/sec: 2744.02 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:41:33,750 epoch 7 - iter 51/173 - loss 0.06494723 - time (sec): 7.02 - samples/sec: 2903.12 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:41:35,877 epoch 7 - iter 68/173 - loss 0.06243766 - time (sec): 9.15 - samples/sec: 2995.72 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:41:39,414 epoch 7 - iter 85/173 - loss 0.06224015 - time (sec): 12.69 - samples/sec: 2712.60 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:41:41,603 epoch 7 - iter 102/173 - loss 0.06046764 - time (sec): 14.88 - samples/sec: 2774.02 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:41:44,116 epoch 7 - iter 119/173 - loss 0.06110116 - time (sec): 17.39 - samples/sec: 2783.23 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:41:46,784 epoch 7 - iter 136/173 - loss 0.06087924 - time (sec): 20.06 - samples/sec: 2756.86 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:41:48,718 epoch 7 - iter 153/173 - loss 0.06033539 - time (sec): 21.99 - samples/sec: 2812.01 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:41:50,780 epoch 7 - iter 170/173 - loss 0.06096599 - time (sec): 24.05 - samples/sec: 2852.88 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:41:51,164 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:41:51,166 EPOCH 7 done: loss 0.0607 - lr: 0.100000
+2025-10-23 08:41:51,167 Saving model at current epoch since 'save_model_each_k_epochs=1' was set
+2025-10-23 08:43:28,239 DEV : loss 0.05351398512721062 - f1-score (micro avg)  0.9124
+2025-10-23 08:43:52,658 TEST : loss 0.08257555216550827 - f1-score (micro avg)  0.8787
+2025-10-23 08:43:52,885  - 2 epochs without improvement
+2025-10-23 08:43:52,894 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:43:55,401 epoch 8 - iter 17/173 - loss 0.05109293 - time (sec): 2.51 - samples/sec: 2774.73 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:43:57,503 epoch 8 - iter 34/173 - loss 0.05109189 - time (sec): 4.61 - samples/sec: 2919.52 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:44:01,868 epoch 8 - iter 51/173 - loss 0.05404809 - time (sec): 8.97 - samples/sec: 2277.21 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:44:04,925 epoch 8 - iter 68/173 - loss 0.05291006 - time (sec): 12.03 - samples/sec: 2263.15 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:44:07,130 epoch 8 - iter 85/173 - loss 0.05405072 - time (sec): 14.23 - samples/sec: 2364.05 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:44:09,641 epoch 8 - iter 102/173 - loss 0.05428953 - time (sec): 16.75 - samples/sec: 2450.72 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:44:12,187 epoch 8 - iter 119/173 - loss 0.05524602 - time (sec): 19.29 - samples/sec: 2472.10 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:44:15,226 epoch 8 - iter 136/173 - loss 0.05437326 - time (sec): 22.33 - samples/sec: 2431.87 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:44:17,882 epoch 8 - iter 153/173 - loss 0.05424257 - time (sec): 24.99 - samples/sec: 2451.46 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:44:20,565 epoch 8 - iter 170/173 - loss 0.05431809 - time (sec): 27.67 - samples/sec: 2480.72 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:44:20,949 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:44:20,952 EPOCH 8 done: loss 0.0543 - lr: 0.100000
+2025-10-23 08:44:20,955 Saving model at current epoch since 'save_model_each_k_epochs=1' was set
+2025-10-23 08:45:21,467 DEV : loss 0.04858461022377014 - f1-score (micro avg)  0.9226
+2025-10-23 08:45:41,100 TEST : loss 0.07793367654085159 - f1-score (micro avg)  0.8946
+2025-10-23 08:45:41,297  - 0 epochs without improvement
+2025-10-23 08:45:41,307 saving best model
+2025-10-23 08:46:13,862 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:46:16,891 epoch 9 - iter 17/173 - loss 0.04595805 - time (sec): 3.02 - samples/sec: 2317.59 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:46:19,201 epoch 9 - iter 34/173 - loss 0.05069207 - time (sec): 5.33 - samples/sec: 2567.91 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:46:21,143 epoch 9 - iter 51/173 - loss 0.05073959 - time (sec): 7.28 - samples/sec: 2847.62 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:46:23,133 epoch 9 - iter 68/173 - loss 0.05229484 - time (sec): 9.27 - samples/sec: 3000.56 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:46:25,179 epoch 9 - iter 85/173 - loss 0.05167898 - time (sec): 11.31 - samples/sec: 3058.89 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:46:27,041 epoch 9 - iter 102/173 - loss 0.05196765 - time (sec): 13.17 - samples/sec: 3127.01 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:46:30,065 epoch 9 - iter 119/173 - loss 0.05258916 - time (sec): 16.20 - samples/sec: 2960.00 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:46:32,374 epoch 9 - iter 136/173 - loss 0.05285923 - time (sec): 18.51 - samples/sec: 2974.69 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:46:34,540 epoch 9 - iter 153/173 - loss 0.05265482 - time (sec): 20.67 - samples/sec: 3003.68 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:46:36,359 epoch 9 - iter 170/173 - loss 0.05285888 - time (sec): 22.49 - samples/sec: 3046.72 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:46:36,655 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:46:36,657 EPOCH 9 done: loss 0.0527 - lr: 0.100000
+2025-10-23 08:46:36,659 Saving model at current epoch since 'save_model_each_k_epochs=1' was set
+2025-10-23 08:47:18,633 DEV : loss 0.04532145336270332 - f1-score (micro avg)  0.9303
+2025-10-23 08:47:43,885 TEST : loss 0.07605183124542236 - f1-score (micro avg)  0.9012
+2025-10-23 08:47:44,081  - 0 epochs without improvement
+2025-10-23 08:47:44,107 saving best model
+2025-10-23 08:48:21,051 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:48:23,616 epoch 10 - iter 17/173 - loss 0.04504216 - time (sec): 2.54 - samples/sec: 2764.13 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:48:25,719 epoch 10 - iter 34/173 - loss 0.04678874 - time (sec): 4.65 - samples/sec: 2948.84 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:48:29,394 epoch 10 - iter 51/173 - loss 0.04884186 - time (sec): 8.32 - samples/sec: 2480.63 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:48:32,317 epoch 10 - iter 68/173 - loss 0.04819103 - time (sec): 11.24 - samples/sec: 2435.12 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:48:34,314 epoch 10 - iter 85/173 - loss 0.04751636 - time (sec): 13.24 - samples/sec: 2586.31 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:48:36,218 epoch 10 - iter 102/173 - loss 0.04667028 - time (sec): 15.15 - samples/sec: 2714.87 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:48:38,644 epoch 10 - iter 119/173 - loss 0.04647201 - time (sec): 17.57 - samples/sec: 2734.65 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:48:41,553 epoch 10 - iter 136/173 - loss 0.04657075 - time (sec): 20.48 - samples/sec: 2690.50 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:48:44,894 epoch 10 - iter 153/173 - loss 0.04730795 - time (sec): 23.82 - samples/sec: 2601.99 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:48:47,409 epoch 10 - iter 170/173 - loss 0.04754281 - time (sec): 26.34 - samples/sec: 2606.13 - lr: 0.100000 - momentum: 0.000000
+2025-10-23 08:48:47,994 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:48:47,996 EPOCH 10 done: loss 0.0476 - lr: 0.100000
+2025-10-23 08:48:47,998 Saving model at current epoch since 'save_model_each_k_epochs=1' was set
+2025-10-23 08:50:17,059 DEV : loss 0.046469785273075104 - f1-score (micro avg)  0.9294
+2025-10-23 08:50:54,219 TEST : loss 0.08047804981470108 - f1-score (micro avg)  0.8959
+2025-10-23 08:50:54,507  - 1 epochs without improvement
+2025-10-23 08:52:06,253 ----------------------------------------------------------------------------------------------------
+2025-10-23 08:52:06,270 Loading model from best epoch ...
+2025-10-23 08:52:11,617 SequenceTagger predicts: Dictionary with 19 tags: O, S-LOC, B-LOC, E-LOC, I-LOC, S-PER, B-PER, E-PER, I-PER, S-ORG, B-ORG, E-ORG, I-ORG, S-MISC, B-MISC, E-MISC, I-MISC, <START>, <STOP>
+2025-10-23 08:52:49,054 
+Results:
+- F-score (micro) 0.9012
+- F-score (macro) 0.8855
+- Accuracy 0.8546
+
+By class:
+              precision    recall  f1-score   support
+
+         ORG     0.8627    0.8778    0.8702      1661
+         LOC     0.9221    0.9221    0.9221      1668
+         PER     0.9629    0.9629    0.9629      1617
+        MISC     0.7623    0.8134    0.7870       702
+
+   micro avg     0.8952    0.9072    0.9012      5648
+   macro avg     0.8775    0.8940    0.8855      5648
+weighted avg     0.8965    0.9072    0.9017      5648
+
+2025-10-23 08:52:49,055 ----------------------------------------------------------------------------------------------------
